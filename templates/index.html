@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python File Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Browser Directory Explorer</h1>
+            <div class="breadcrumb" id="breadcrumb">
+                <span class="breadcrumb-item active" data-path=".">Home</span>
+            </div>
+            <div class="actions">
+                <button id="back-btn" disabled><i class="fas fa-arrow-left"></i></button>
+                <button id="forward-btn" disabled><i class="fas fa-arrow-right"></i></button>
+                <button id="new-folder-btn"><i class="fas fa-folder-plus"></i> New Folder</button>
+            </div>
+        </header>
+        
+        <main>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+            </div>
+            <div id="items-container" class="items-container"></div>
+        </main>
+        
+        <div id="context-menu" class="context-menu">
+            <ul>
+                <li id="rename-option"><i class="fas fa-edit"></i> Rename</li>
+                <li id="delete-option"><i class="fas fa-trash"></i> Delete</li>
+                <li id="download-option"><i class="fas fa-download"></i> Download</li>
+            </ul>
+        </div>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Title</h2>
+                <div id="modal-body">
+                    <input type="text" id="input-field" placeholder="Enter name">
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-cancel-btn">Cancel</button>
+                    <button id="modal-confirm-btn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
